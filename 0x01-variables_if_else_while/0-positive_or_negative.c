@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/** more headers goes there
+/**
+ * main - print new lines of +ve, -ve and zero number
  *
- * main - random that outputs +ve, -ve or zero
- *
- * betty style doc for function main goes there
+ * Return: 0
 */
 int main(void)
 {
