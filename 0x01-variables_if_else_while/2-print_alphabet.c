@@ -1,17 +1,18 @@
 #include <stdio.h>
 /**
- * main - program that prints new lines of alphabets in lowercase using putchar()
+ * main - program that prints new lines of lowercase alphabets using putchar()
  *
  * Return: 0
- * 
+ *
 */
-int main()
+int main(void)
 {
 	int i;
-	for ( i = 'a'; i <= 'z'; i++ )
+
+	for (i = 'a'; i <= 'z'; i++)
 	{
 		putchar(i);
-		putchar('\n');
 	}
+	putchar('\n');
 	return (0);
 }
