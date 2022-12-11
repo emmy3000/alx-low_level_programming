@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * main - program that prints new lines of lowercase alphabets using putchar()
+ * main - program that prints new lines of lowercase alphabets in
+ * reverse order using putchar()
  *
  * Return: 0
  *
