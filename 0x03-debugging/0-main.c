@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * main - Test function for determining +ve or -ve values
- *
+ * main - tests function that prints if integer is positive or negative
  * Return: 0
-*/
+ */
 
 int main(void)
 {
 	int i;
 
 	i = 0;
-	positive_or_negative(i);
+	positive_or_negtive(i);
 
 	return (0);
 }
