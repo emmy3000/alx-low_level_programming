@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * put2 - prints every char starting with 1st char
- * followed by new line
- * @str: string parameter
+ * puts2 - prints every other character in string followed by new line
+ * @str: string parameter checker
  *
  * Return: 0
 */
