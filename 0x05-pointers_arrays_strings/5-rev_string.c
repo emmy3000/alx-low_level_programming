@@ -21,7 +21,7 @@ void rev_string(char *s)
 	k = i - 1;
 
 	/* loop through chars till they clash in the middle */
-	for (j = 0; k >= 0 && j < k; k--, b++)
+	for (j = 0; k >= 0 && j < k; k--, j++)
 	{
 		rev = s[j];
 		s[j] = s[k];
