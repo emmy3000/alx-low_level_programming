@@ -1,1 +1,1 @@
-0x06. C - More pointers, arrays and strings
+Project tasks for 0x06. C - More pointers, arrays and strings
