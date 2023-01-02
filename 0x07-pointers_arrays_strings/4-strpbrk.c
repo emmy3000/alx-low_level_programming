@@ -9,7 +9,7 @@
  * Return: pointer to a byte
  */
 
-har *_strpbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
 	int i;
 		while (*s)
