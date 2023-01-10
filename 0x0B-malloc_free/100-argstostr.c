@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * argtostr - concatenates all arguments in a program
+ * argstostr - concatenates all arguments in a program
  *
  * @ac: argument counter param
  * @av: array of arguments to be concatenated param
