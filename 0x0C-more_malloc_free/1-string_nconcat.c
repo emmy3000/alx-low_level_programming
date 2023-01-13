@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	for (k = 0; k < x; k++)
 		str[k] = s1[k];
-	for (k = 0; k < y; k++)
+	for (k = 0; k < j; k++)
 		str[k + i] = s2[k];
 	str[i + j] = '\0';
 	return (str);
