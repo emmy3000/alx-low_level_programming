@@ -5,7 +5,7 @@
  *
  * @b: amount of memory to be allocated
  *
- * Return: pointed allocated to memory
+ * Return: pointer allocated to memory
  */
 
 void *malloc_checked(unsigned int b)
