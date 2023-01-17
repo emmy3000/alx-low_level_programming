@@ -1,7 +1,7 @@
 #include "dog.h"
 
 /**
- * init_dog - initializes the structure of a dog
+ * init_dog - initializes the structure dog
  *
  * @d: pointer to a struct
  * @name: pointer to the name of dog
