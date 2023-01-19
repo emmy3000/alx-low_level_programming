@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void print_all(cons char * const format, ...)
+void print_all(const char * const format, ...)
 {
 	int i;
 	int flag;
@@ -30,7 +30,7 @@ void print_all(cons char * const format, ...)
 				flag = 0;
 				break;
 			case 'f':
-				printf("%f", va_arg(arg_list, int);
+				printf("%f", va_arg(arg_list, double));
 				flag = 0;
 				break;
 			case 's':
