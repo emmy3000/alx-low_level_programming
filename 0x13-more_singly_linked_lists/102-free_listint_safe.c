@@ -1,9 +1,9 @@
-#include "list.h"
+#include "lists.h"
 #include <stdlib.h>
-#include < stdio.h>
+#include <stdio.h>
 
 /**
- * _r - memory reallocation for an array of pointers to nodes
+ * _re - memory reallocation for an array of pointers to nodes
  * in a linked list
  *
  * @list: old list to append
@@ -13,7 +13,7 @@
  * Return: pointer to the new list
  */
 
-listint_t **_r(listint_t **list, size_t size, listint_t *new)
+listint_t **_re(listint_t **list, size_t size, listint_t *new)
 {
 	listint_t **newlist;
 	size_t i;
@@ -41,7 +41,7 @@ listint_t **_r(listint_t **list, size_t size, listint_t *new)
 
 size_t free_listint_safe(listint_t **head)
 {
-	size_t, num = 0;
+	size_t i, num = 0;
 	listint_t **list = NULL;
 	listint_t *next;
 
@@ -59,11 +59,11 @@ size_t free_listint_safe(listint_t **head)
 			}
 		}
 		num++;
-		list = _r(list, num, *head);
+		list = _re(list, num, *head);
 		next = (*head)->next;
 		free(*head);
 		*head = next;
 	}
 	free(list);
 	return (num);
-};
+}
