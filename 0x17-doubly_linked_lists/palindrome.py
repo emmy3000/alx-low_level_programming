@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Program that finds the largest palindrome number\
+"""Program finds the largest palindrome number\
         that is a product of two 3-digit numbers."""
 
 
