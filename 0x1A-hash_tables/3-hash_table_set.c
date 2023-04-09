@@ -16,10 +16,7 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 	hash_node_t *node = malloc(sizeof(hash_node_t));
 
 	if (node == NULL)
-	{
-		fprintf(stderr, "Error: Memory allocation failed\n");
 		return (NULL);
-	}
 
 	node->key = strdup(key);
 	node->value = strdup(value);
@@ -30,9 +27,7 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 		free(node);
 		return (NULL);
 	}
-
 	node->next = NULL;
-	
 	return (node);
 }
 
@@ -52,25 +47,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (strlen(key) == 0)
 	{
-		fprintf(stderr,"Key cannot be an empty string\n");
+		fprintf(stderr, "Key cannot be an empty string\n");
 		return (0);
 	}
-	
-	/* Allocate memory for the new node */
+
 	new_node = create_hash_node(key, value);
 
 	if (new_node == NULL)
 		return (0);
-	
-	/* Index Computation for the key */
-	index = key_index((const unsigned char *)key, ht->size);
 
-	/* Check if index already has a node */
+	index = key_index((const unsigned char *)key, ht->size);
 	temp_node = ht->array[index];
 
 	while (temp_node != NULL)
 	{
-		/* Update value if key exists already */
 		if (strcmp(temp_node->key, key) == 0)
 		{
 			free(new_node->key);
@@ -79,19 +69,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(temp_node->value);
 			temp_node->value = strdup(value);
 
-			if(temp_node->value == NULL)
-			{
-				fprintf(stderr, "Error: Memory allocation failed\n");
+			if (temp_node->value == NULL)
 				return (0);
-			}
-
 			return (1);
 		}
-
 		temp_node = temp_node->next;
 	}
-
-	/* Insert the  new node at the beginning of the linked list */
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
 
