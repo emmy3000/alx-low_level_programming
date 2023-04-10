@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 #include "hash_tables.h"
 
 /**
@@ -10,31 +9,30 @@
  * @ht: hash table containing keys & values
  *
  * Return: key/value contained in hash table array to
- * 	be printed in a specific order
+ * be printed in a specific order
  */
 
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *node;
 	unsigned long int i = 0;
-	bool blanks = false;
+	int blanks = 0;
 
 	putchar('{');
-	
+
 	for (; i < ht->size; i++)
 	{
 		node = ht->array[i];
 
 		while (node != NULL)
 		{
-			if (blanks == true)
+			if (blanks == 1)
 			{
 				putchar(',');
 				putchar(' ');
 			}
 			printf("'%s': '%s'", node->key, node->value);
-			putchar(',');
-			putchar(' ');
+			blanks = 1;
 
 			node = node->next;
 		}
