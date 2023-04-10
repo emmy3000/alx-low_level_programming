@@ -6,15 +6,15 @@
 /**
  * hash_table_get - Program retrieves a value associated with a key
  *
- * @ht: hash table containing value being searchd for
+ * @ht: hash table containing value searched
  * @key: the key asscoiated with the value
  *
- * Return: value searhced in ht or NULL if key couldn't be found
+ * Return: value searched in ht or NULL if key couldn't be found
  */
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	hash_node_t* node;
+	hash_node_t *node;
 	unsigned long int index;
 
 	index = key_index((unsigned char *)key, ht->size);
@@ -24,7 +24,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (strcmp(node->key, key) == 0)
 		{
-			return node->value;
+			return (node->value);
 		}
 
 		node = node->next;
