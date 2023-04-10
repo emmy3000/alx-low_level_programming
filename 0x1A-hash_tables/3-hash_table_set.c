@@ -21,7 +21,7 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 	node->key = strdup(key);
 	node->value = strdup(value);
 
-	if (node->key == NULL || node->value == NULL)
+	if (node->key == NULL && node->value == NULL)
 	{
 		fprintf(stderr, "Error: Memory allocation failed\n");
 		free(node);
