@@ -45,7 +45,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node, *temp_node;
 	unsigned long int index;
 
-	if (strlen(key) == 0)
+	if (strlen(key) == 0 || ht == NULL || value == NULL)
 	{
 		fprintf(stderr, "Key cannot be an empty string\n");
 		return (0);

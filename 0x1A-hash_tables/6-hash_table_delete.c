@@ -4,11 +4,12 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_delete - Program deletes a hash table
+ * hash_table_delete - Program deletes and deallocates memory
+ * used by the hash table
  *
- * @ht: hash table to be deleted
+ * @ht: pointer to the hash table to be delete
  *
- * Return: nothing
+ * Return: void
  */
 
 void hash_table_delete(hash_table_t *ht)
@@ -17,20 +18,26 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *temp;
 	unsigned long int i;
 
+	if (!ht || !ht->array || !ht->size)
+		return;
+
 
 	for (i = 0; i < ht->size; i++)
 	{
 		node = ht->array[i];
 
-		while (node != NULL)
+		while (node)
 		{
 			temp = node->next;
 			free(node->key);
 			free(node->value);
+			free(node);
 			node = temp;
 		}
 	}
 
 	free(ht->array);
+	ht->array = NULL;
+	ht->size = 0;
 	free(ht);
 }
