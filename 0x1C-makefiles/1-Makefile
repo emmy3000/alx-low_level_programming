@@ -1,0 +1,11 @@
+# Referencing `0-Makefile` makefile file.
+# Initializing variables with the compiler and sources as values.
+
+CC=gcc
+SRC=*.c
+
+all: school
+	./school
+
+school: main.c school.c
+	$(CC) $(SRC) -o school
