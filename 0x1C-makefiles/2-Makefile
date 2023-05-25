@@ -1,16 +1,17 @@
 # Referencing `1-Makefile`
 # Explicit declaration of object files during compilation.
-# Initializing variables with object files as values.
+# Initializing variables with object files and executable as values.
 
 CC = gcc
 OBJ = main.o school.o
 SRC = main.c school.c
+NAME = school
 
-all: school
-	./school
+all: $(NAME)
+	./$(NAME)
 
-school: $(OBJ)
-	$(CC) $(OBJ) -o school
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
 main.o: main.c
 	$(CC) -c main.c
