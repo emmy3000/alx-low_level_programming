@@ -1,0 +1,31 @@
+# Referencing `2-Makefile`
+# Additional rules:
+# - clean: deletes all temp files.
+# - oclean: deletes all object files.
+# - fclean: deletes all temp files, the executable and object files.
+# - re: force recompilation of all source files.
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+
+all: $(NAME)
+	./$(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	$(CC) -c $< -o $@
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
