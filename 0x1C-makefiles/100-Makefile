@@ -1,0 +1,33 @@
+# Makefile build, clean up and management of the `school` executable  with certain constraints
+# one of them being certain variables should not be re-evaluated or changed once assigned.
+
+CC := gcc
+CFLAGS := -Wall -Werror -Wextra -pedantic
+
+SRC := $(wildcard ".c)
+OBJ := $(SRC:.c=.o)
+NAME := school
+
+.PHONY: all clean fclean oclean re
+
+all: $(NAME)
+	./$(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) $(OBJ) $(NAME) *~ \#*\#
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean
+
+re: fclean all
+
+$(OBJ): m.h
+
+ifndef VERBOSE
+.SILENT:
+endif
