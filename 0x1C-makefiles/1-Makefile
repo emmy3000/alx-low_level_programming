@@ -1,4 +1,4 @@
-# Referencing `0-Makefile` makefile file.
+# Referencing `0-Makefile`
 # Initializing variables with the gcc compiler and source files as values.
 
 CC = gcc
