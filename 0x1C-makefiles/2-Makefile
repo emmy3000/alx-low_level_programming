@@ -3,8 +3,7 @@
 # Initializing variables with object files and executable as values.
 
 CC = gcc
-OBJ = *.o
-SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
 NAME = school
 
 all: $(NAME)
@@ -13,5 +12,5 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) -c $(SRC)
+#%.o: %.c
+#	$(CC) -c $(SRC)
