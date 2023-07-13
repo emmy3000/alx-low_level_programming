@@ -15,7 +15,8 @@
  *
  * Description: This function performs binary search on a sorted array
  *              to find the index of the specified value. It uses a recursive
- *              approach and prints the subarray being searched after each change.
+ *              approach and prints the subarray being searched after each
+ *              change.
  */
 int binary_search_recursive(int *array, size_t left, size_t right, int value)
 {
